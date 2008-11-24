@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
  */
-package com.dcom.remote.WbemDisp;
+package com.dcom.remote.wbemdisp;
 
 import com.dcom.exception.AutomationException;
 import org.jinterop.dcom.impls.automation.IJIDispatch;
@@ -65,7 +65,7 @@ public interface ISWbemProperty extends java.io.Serializable {
     /**
      * getCIMType. The CIM Type of this Property
      *
-     * @return A com.dcom.remote.WbemDisp.WbemCimtypeEnum constant
+     * @return A com.dcom.remote.wbemdisp.WbemCimtypeEnum constant
      * @throws AutomationException If the remote server throws an exception.
      */
     public int getCIMType() throws AutomationException;

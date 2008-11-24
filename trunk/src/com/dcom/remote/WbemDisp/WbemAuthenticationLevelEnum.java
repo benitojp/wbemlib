@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
  */
-package com.dcom.remote.WbemDisp;
+package com.dcom.remote.wbemdisp;
 
 public interface WbemAuthenticationLevelEnum {
     static final int wbemAuthenticationLevelDefault = 0;

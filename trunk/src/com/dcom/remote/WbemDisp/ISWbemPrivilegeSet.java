@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
  */
-package com.dcom.remote.WbemDisp;
+package com.dcom.remote.wbemdisp;
 
 import com.dcom.exception.AutomationException;
 import org.jinterop.dcom.impls.automation.IJIEnumVariant;
@@ -32,7 +32,7 @@ public interface ISWbemPrivilegeSet extends ISWbem {
     /**
      * item. Get a named Privilege from this collection
      *
-     * @param iPrivilege A com.dcom.remote.WbemDisp.WbemPrivilegeEnum constant (in)
+     * @param iPrivilege A com.dcom.remote.wbemdisp.WbemPrivilegeEnum constant (in)
      * @return An reference to a ISWbemPrivilege
      * @throws AutomationException If the remote server throws an exception.
      */
@@ -50,7 +50,7 @@ public interface ISWbemPrivilegeSet extends ISWbem {
     /**
      * add. Add a Privilege to this collection
      *
-     * @param iPrivilege A com.dcom.remote.WbemDisp.WbemPrivilegeEnum constant (in)
+     * @param iPrivilege A com.dcom.remote.wbemdisp.WbemPrivilegeEnum constant (in)
      * @param bIsEnabled The bIsEnabled (in, optional, pass true if not required)
      * @return An reference to a ISWbemPrivilege
      * @throws AutomationException If the remote server throws an exception.
@@ -62,7 +62,7 @@ public interface ISWbemPrivilegeSet extends ISWbem {
     /**
      * remove. Remove a Privilege from this collection
      *
-     * @param iPrivilege A com.dcom.remote.WbemDisp.WbemPrivilegeEnum constant (in)
+     * @param iPrivilege A com.dcom.remote.wbemdisp.WbemPrivilegeEnum constant (in)
      * @throws AutomationException If the remote server throws an exception.
      */
     public void remove(

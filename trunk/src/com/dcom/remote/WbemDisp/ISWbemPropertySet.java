@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
  */
-package com.dcom.remote.WbemDisp;
+package com.dcom.remote.wbemdisp;
 
 import com.dcom.exception.AutomationException;
 import org.jinterop.dcom.impls.automation.IJIEnumVariant;
@@ -53,7 +53,7 @@ public interface ISWbemPropertySet extends ISWbem {
      * add. Add a Property to this collection
      *
      * @param strName  The strName (in)
-     * @param iCimType A com.dcom.remote.WbemDisp.WbemCimtypeEnum constant (in)
+     * @param iCimType A com.dcom.remote.wbemdisp.WbemCimtypeEnum constant (in)
      * @param bIsArray The bIsArray (in, optional, pass false if not required)
      * @param iFlags   The iFlags (in, optional, pass 0 if not required)
      * @return An reference to a ISWbemProperty
