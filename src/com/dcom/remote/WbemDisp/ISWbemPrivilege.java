@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
  */
-package com.dcom.remote.WbemDisp;
+package com.dcom.remote.wbemdisp;
 
 import com.dcom.exception.AutomationException;
 
@@ -56,7 +56,7 @@ public interface ISWbemPrivilege extends ISWbem {
     /**
      * getIdentifier. The Privilege identifier
      *
-     * @return A com.dcom.remote.WbemDisp.WbemPrivilegeEnum constant
+     * @return A com.dcom.remote.wbemdisp.WbemPrivilegeEnum constant
      * @throws AutomationException If the remote server throws an exception.
      */
     public int getIdentifier() throws AutomationException;

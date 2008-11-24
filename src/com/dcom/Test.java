@@ -19,16 +19,20 @@ package com.dcom;
 
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
-import com.dcom.remote.WbemDisp.*;
-import com.dcom.remote.WbemDisp.util.Utility;
+import com.dcom.remote.wbemdisp.*;
+import com.dcom.remote.wbemdisp.util.Utility;
 
+import com.dcom.utils.Log;
 import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import org.jinterop.dcom.common.JISystem;
 
 public class Test {
 
     String domain = "TWOSHEA";
-    String userName = "user";
-    String password = "user";
+    String userName = "root";
+    String password = "root2008";
     String server = "172.16.210.70";
 
     public static ISWbemObject getTargetComputer(ClientInfo clientInfo, ISWbemServices iSWbemServices, String vmElementName) throws AutomationException, AutomationException {
@@ -51,7 +55,9 @@ public class Test {
         ClientInfo clientInfo = new ClientInfo(domain, userName, password, server);
         try {
 
-
+            //Log.setJInteropOff();
+            //Log.setJInteropOn(Level.ALL);
+            
             sWbemLocator = new SWbemLocator(clientInfo);
             sWbemLocator.clientConnect();
             //root\\virtualization
@@ -218,7 +224,7 @@ public class Test {
     public static void main(String[] args) {
 
         Test test = new Test();
-        //test.test1();
-        test.test2();
+        test.test1();
+        //test.test2();
     }
 }

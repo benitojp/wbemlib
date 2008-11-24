@@ -28,10 +28,7 @@ import org.jinterop.dcom.core.JISession;
 import org.jinterop.dcom.impls.JIObjectFactory;
 import org.jinterop.dcom.impls.automation.IJIDispatch;
 
-import java.io.IOException;
 import java.net.UnknownHostException;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
 
 /**
  * @author mio
@@ -50,23 +47,13 @@ public class ServiceConnection {
 
     public ServiceConnection() {
 
-        try {
+        _state = ConnectionState_Disconnected;
+        JISystem.setAutoRegisteration(true);
 
-            _state = ConnectionState_Disconnected;
-            JISystem.setAutoRegisteration(true);
-
-            if (!bJILogInitialized) {
-
-                // mio NOTE : set log msg off
-                JISystem.setInBuiltLogHandler(true);
-                LogManager.getLogManager().getLogger("org.jinterop").setLevel(Level.OFF);
-                bJILogInitialized = true;
-            }
-        } catch (SecurityException e) {
-            Log.getInstance().getLogger().throwing("ServiceConnection", "ServiceConnection()", e);
-        } catch (IOException e) {
-            Log.getInstance().getLogger().throwing("ServiceConnection", "ServiceConnection()", e);
+        if (!bJILogInitialized) {
+            bJILogInitialized = true;
         }
+
 
     }
 

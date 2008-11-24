@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
  */
-package com.dcom.remote.WbemDisp;
+package com.dcom.remote.wbemdisp;
 
 import com.dcom.exception.AutomationException;
 
@@ -23,7 +23,7 @@ public interface ISWbemSecurity extends ISWbem {
     /**
      * getImpersonationLevel. The security impersonation level
      *
-     * @return A com.dcom.remote.WbemDisp.WbemImpersonationLevelEnum constant
+     * @return A com.dcom.remote.wbemdisp.WbemImpersonationLevelEnum constant
      * @throws AutomationException If the remote server throws an exception.
      */
     public int getImpersonationLevel() throws AutomationException;
@@ -31,7 +31,7 @@ public interface ISWbemSecurity extends ISWbem {
     /**
      * setImpersonationLevel. The security impersonation level
      *
-     * @param iImpersonationLevel A com.dcom.remote.WbemDisp.WbemImpersonationLevelEnum constant (in)
+     * @param iImpersonationLevel A com.dcom.remote.wbemdisp.WbemImpersonationLevelEnum constant (in)
      * @throws AutomationException If the remote server throws an exception.
      */
     public void setImpersonationLevel(
@@ -40,7 +40,7 @@ public interface ISWbemSecurity extends ISWbem {
     /**
      * getAuthenticationLevel. The security authentication level
      *
-     * @return A com.dcom.remote.WbemDisp.WbemAuthenticationLevelEnum constant
+     * @return A com.dcom.remote.wbemdisp.WbemAuthenticationLevelEnum constant
      * @throws AutomationException If the remote server throws an exception.
      */
     public int getAuthenticationLevel() throws AutomationException;
@@ -48,7 +48,7 @@ public interface ISWbemSecurity extends ISWbem {
     /**
      * setAuthenticationLevel. The security authentication level
      *
-     * @param iAuthenticationLevel A com.dcom.remote.WbemDisp.WbemAuthenticationLevelEnum constant (in)
+     * @param iAuthenticationLevel A com.dcom.remote.wbemdisp.WbemAuthenticationLevelEnum constant (in)
      * @throws AutomationException If the remote server throws an exception.
      */
     public void setAuthenticationLevel(

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
  */
-package com.dcom.remote.WbemDisp;
+package com.dcom.remote.wbemdisp;
 
 import com.dcom.exception.AutomationException;
 
@@ -41,7 +41,7 @@ public interface ISWbemObjectEx extends ISWbemObject, ISWbem {
   /**
    * getText_. Retrieve a textual representation of this Object
    *
-   * @param     iObjectTextFormat A com.dcom.remote.WbemDisp.WbemObjectTextFormatEnum constant (in)
+   * @param     iObjectTextFormat A com.dcom.remote.wbemdisp.WbemObjectTextFormatEnum constant (in)
    * @param     iFlags The iFlags (in, optional, pass 0 if not required)
    * @param     objWbemNamedValueSet A reference to another Automation Object (IDispatch) (in, optional, pass IDispatch if not required)
    * @return    The bsText
@@ -56,7 +56,7 @@ public interface ISWbemObjectEx extends ISWbemObject, ISWbem {
    * setFromText_. Set this Object using the supplied textual representation
    *
    * @param     bsText The bsText (in)
-   * @param     iObjectTextFormat A com.dcom.remote.WbemDisp.WbemObjectTextFormatEnum constant (in)
+   * @param     iObjectTextFormat A com.dcom.remote.wbemdisp.WbemObjectTextFormatEnum constant (in)
    * @param     iFlags The iFlags (in, optional, pass 0 if not required)
    * @param     objWbemNamedValueSet A reference to another Automation Object (IDispatch) (in, optional, pass IDispatch if not required)
    * @exception AutomationException If the remote server throws an exception.

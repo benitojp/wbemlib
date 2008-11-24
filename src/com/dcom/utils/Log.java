@@ -21,8 +21,10 @@ package com.dcom.utils;
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+import org.jinterop.dcom.common.JISystem;
 
 /**
  * @author mio
@@ -37,7 +39,7 @@ public class Log {
     }
 
     public synchronized static Log getInstance() {
-        if (_instance == null) {
+        if (_instance == null) {           
             _instance = new Log();
         }
 
@@ -45,7 +47,7 @@ public class Log {
     }
 
     /**
-     * Returns the logger identified by the name "com.vizioncore.vautomator.ap.mshv".
+     * Returns the logger identified by the name "com.dcom.wbemlib".
      *
      * @return Logger
      */
@@ -103,5 +105,35 @@ public class Log {
      */
     public static void throwing(Exception e) {
         _logger.throwing(Log.getClassName(), Log.getMethodName(), e);
+    }
+
+    /**
+     * setJInteropOff()
+     */
+    public static void setJInteropOff() {
+        try {
+            // mio NOTE : set j-interop log msg off
+            JISystem.setInBuiltLogHandler(true);
+            LogManager.getLogManager().getLogger("org.jinterop").setLevel(Level.OFF);
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * setJInteropOn()
+     */
+    public static void setJInteropOn(Level level) {
+        try {
+            // mio NOTE : set j-interop log msg off
+            JISystem.setInBuiltLogHandler(true);
+            LogManager.getLogManager().getLogger("org.jinterop").setLevel(level);
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

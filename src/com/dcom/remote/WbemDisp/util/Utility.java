@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
  */
-package com.dcom.remote.WbemDisp.util;
+package com.dcom.remote.wbemdisp.util;
 
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
 import com.dcom.exception.DCOMException;
-import com.dcom.remote.WbemDisp.*;
+import com.dcom.remote.wbemdisp.*;
 import com.dcom.utils.Log;
 import org.jinterop.dcom.common.JIException;
 import org.jinterop.dcom.core.IJIComObject;
