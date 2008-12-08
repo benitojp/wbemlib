@@ -20,6 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemPrivilege extends ISWbem {
+
     /**
      * isEnabled. Whether the Privilege is to be enabled or disabled
      *

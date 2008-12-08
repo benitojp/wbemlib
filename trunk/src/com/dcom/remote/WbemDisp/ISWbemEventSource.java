@@ -20,6 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemEventSource extends ISWbem {
+
     /**
      * nextEvent. Retrieve the next event within a specified time period. The timeout is specified in milliseconds.
      *
@@ -37,8 +38,6 @@ public interface ISWbemEventSource extends ISWbem {
      * @throws AutomationException If the remote server throws an exception.
      */
     public ISWbemSecurity getSecurity_() throws AutomationException;
-
-
 //    String IID = "27d54d92-0ebe-11d2-8b22-00600806d9b6";
 //    String DISPID_1_NAME = "nextEvent";
 //    String DISPID_2_GET_NAME = "getSecurity_";

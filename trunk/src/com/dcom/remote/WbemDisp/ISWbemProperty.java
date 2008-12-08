@@ -21,6 +21,7 @@ import com.dcom.exception.AutomationException;
 import org.jinterop.dcom.impls.automation.IJIDispatch;
 
 public interface ISWbemProperty extends java.io.Serializable {
+
     /**
      * getValue. The value of this Property
      *
@@ -85,7 +86,6 @@ public interface ISWbemProperty extends java.io.Serializable {
      * @throws AutomationException If the remote server throws an exception.
      */
     public boolean isArray() throws AutomationException;
-
 
     /**
      * getIID()

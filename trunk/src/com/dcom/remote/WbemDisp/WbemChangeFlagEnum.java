@@ -18,6 +18,7 @@
 package com.dcom.remote.wbemdisp;
 
 public interface WbemChangeFlagEnum {
+
     static final int wbemChangeFlagCreateOrUpdate = 0;
     static final int wbemChangeFlagUpdateOnly = 1;
     static final int wbemChangeFlagCreateOnly = 2;

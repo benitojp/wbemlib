@@ -18,6 +18,7 @@
 package com.dcom.remote.wbemdisp;
 
 public interface WbemErrorEnum {
+
     static final int wbemNoErr = 0;
     static final int wbemErrFailed = -2147217407;
     static final int wbemErrNotFound = -2147217406;

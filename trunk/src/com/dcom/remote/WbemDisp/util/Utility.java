@@ -56,11 +56,11 @@ public class Utility {
             return iSWbemObject;
 
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
         }
     }
@@ -85,11 +85,11 @@ public class Utility {
             return iSWbemObjectList;
 
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
         }
     }
@@ -114,11 +114,11 @@ public class Utility {
             return iSWbemProperty;
 
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
         }
     }

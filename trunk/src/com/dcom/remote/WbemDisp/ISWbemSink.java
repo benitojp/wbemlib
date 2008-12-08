@@ -20,6 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemSink extends ISWbem {
+
     /**
      * cancel. Cancel an asynchronous operation
      *

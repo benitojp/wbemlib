@@ -18,6 +18,7 @@
 package com.dcom.remote.wbemdisp;
 
 public interface WbemAuthenticationLevelEnum {
+
     static final int wbemAuthenticationLevelDefault = 0;
     static final int wbemAuthenticationLevelNone = 1;
     static final int wbemAuthenticationLevelConnect = 2;

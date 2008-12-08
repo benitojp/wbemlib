@@ -94,10 +94,10 @@ public class ServiceConnection {
             _state = ConnectionState_Connected;
 
         } catch (UnknownHostException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new DCOMException(e);
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new DCOMException(e);
         }
     }
@@ -122,7 +122,7 @@ public class ServiceConnection {
 
                 _state = ConnectionState_Disconnected;
             } catch (JIException e) {
-                Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+                
                 throw new DCOMException(e);
             }
         }
@@ -135,7 +135,7 @@ public class ServiceConnection {
             return dispatch;
 
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new DCOMException(e);
         }
     }

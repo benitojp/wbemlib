@@ -20,7 +20,6 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
 import com.dcom.exception.DCOMException;
-import com.dcom.utils.Log;
 import org.jinterop.dcom.core.IJIComObject;
 import org.jinterop.dcom.core.JIVariant;
 
@@ -35,7 +34,7 @@ public class SWbemProperty extends WbemDisp implements ISWbemProperty {
         try {
             return getResult(get("Value"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -45,7 +44,7 @@ public class SWbemProperty extends WbemDisp implements ISWbemProperty {
         try {
             put("Value", new JIVariant(varValue));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -55,7 +54,7 @@ public class SWbemProperty extends WbemDisp implements ISWbemProperty {
         try {
             return (String) getResult(get("Name"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -65,7 +64,7 @@ public class SWbemProperty extends WbemDisp implements ISWbemProperty {
         try {
             return (Boolean) getResult(get("Local"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -75,7 +74,7 @@ public class SWbemProperty extends WbemDisp implements ISWbemProperty {
         try {
             return (String) getResult(get("Origin"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -85,7 +84,7 @@ public class SWbemProperty extends WbemDisp implements ISWbemProperty {
         try {
             return (Integer) getResult(get("CIMType"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -95,7 +94,7 @@ public class SWbemProperty extends WbemDisp implements ISWbemProperty {
         try {
             return (new SWbemQualifierSet(getClientInfo(), (IJIComObject) getResult(get("SWbemQualifierSet"))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -105,10 +104,8 @@ public class SWbemProperty extends WbemDisp implements ISWbemProperty {
         try {
             return (Boolean) getResult(get("Array"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
-
-
 }

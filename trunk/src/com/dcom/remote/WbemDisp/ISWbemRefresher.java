@@ -20,119 +20,118 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemRefresher extends ISWbem {
-  /**
-   * get_NewEnum. 
-   *
-   * @return    An enumeration.
 
-   * @exception AutomationException If the remote server throws an exception.
-   */
-  public java.util.Enumeration get_NewEnum  () throws AutomationException;
+    /**
+     * get_NewEnum.
+     *
+     * @return    An enumeration.
 
-  /**
-   * item. Get an item from this refresher
-   *
-   * @param     iIndex The iIndex (in)
-   * @return    An reference to a ISWbemRefreshableItem
+     * @exception AutomationException If the remote server throws an exception.
+     */
+    public java.util.Enumeration get_NewEnum() throws AutomationException;
 
-   * @exception AutomationException If the remote server throws an exception.
-   */
-  public ISWbemRefreshableItem item  (
-              int iIndex) throws AutomationException;
+    /**
+     * item. Get an item from this refresher
+     *
+     * @param     iIndex The iIndex (in)
+     * @return    An reference to a ISWbemRefreshableItem
 
-  /**
-   * getCount. The number of items in this refresher
-   *
-   * @return    The iCount
+     * @exception AutomationException If the remote server throws an exception.
+     */
+    public ISWbemRefreshableItem item(
+            int iIndex) throws AutomationException;
 
-   * @exception AutomationException If the remote server throws an exception.
-   */
-  public int getCount  () throws AutomationException;
+    /**
+     * getCount. The number of items in this refresher
+     *
+     * @return    The iCount
 
-  /**
-   * add. Add a refreshable instance to this refresher
-   *
-   * @param     objWbemServices An reference to a ISWbemServicesEx (in)
-   * @param     bsInstancePath The bsInstancePath (in)
-   * @param     iFlags The iFlags (in, optional, pass 0 if not required)
-   * @param     objWbemNamedValueSet A reference to another Automation Object (IDispatch) (in, optional, pass IDispatch if not required)
-   * @return    An reference to a ISWbemRefreshableItem
+     * @exception AutomationException If the remote server throws an exception.
+     */
+    public int getCount() throws AutomationException;
 
-   * @exception AutomationException If the remote server throws an exception.
-   */
-  public ISWbemRefreshableItem add  (
-              ISWbemServicesEx objWbemServices,
-              String bsInstancePath,
-              int iFlags,
-              ISWbem objWbemNamedValueSet) throws AutomationException;
+    /**
+     * add. Add a refreshable instance to this refresher
+     *
+     * @param     objWbemServices An reference to a ISWbemServicesEx (in)
+     * @param     bsInstancePath The bsInstancePath (in)
+     * @param     iFlags The iFlags (in, optional, pass 0 if not required)
+     * @param     objWbemNamedValueSet A reference to another Automation Object (IDispatch) (in, optional, pass IDispatch if not required)
+     * @return    An reference to a ISWbemRefreshableItem
 
-  /**
-   * addEnum. Add a refreshable enumerator to this refresher
-   *
-   * @param     objWbemServices An reference to a ISWbemServicesEx (in)
-   * @param     bsClassName The bsClassName (in)
-   * @param     iFlags The iFlags (in, optional, pass 0 if not required)
-   * @param     objWbemNamedValueSet A reference to another Automation Object (IDispatch) (in, optional, pass IDispatch if not required)
-   * @return    An reference to a ISWbemRefreshableItem
+     * @exception AutomationException If the remote server throws an exception.
+     */
+    public ISWbemRefreshableItem add(
+            ISWbemServicesEx objWbemServices,
+            String bsInstancePath,
+            int iFlags,
+            ISWbem objWbemNamedValueSet) throws AutomationException;
 
-   * @exception AutomationException If the remote server throws an exception.
-   */
-  public ISWbemRefreshableItem addEnum  (
-              ISWbemServicesEx objWbemServices,
-              String bsClassName,
-              int iFlags,
-              ISWbem objWbemNamedValueSet) throws AutomationException;
+    /**
+     * addEnum. Add a refreshable enumerator to this refresher
+     *
+     * @param     objWbemServices An reference to a ISWbemServicesEx (in)
+     * @param     bsClassName The bsClassName (in)
+     * @param     iFlags The iFlags (in, optional, pass 0 if not required)
+     * @param     objWbemNamedValueSet A reference to another Automation Object (IDispatch) (in, optional, pass IDispatch if not required)
+     * @return    An reference to a ISWbemRefreshableItem
 
-  /**
-   * remove. Remove an item from this refresher
-   *
-   * @param     iIndex The iIndex (in)
-   * @param     iFlags The iFlags (in, optional, pass 0 if not required)
+     * @exception AutomationException If the remote server throws an exception.
+     */
+    public ISWbemRefreshableItem addEnum(
+            ISWbemServicesEx objWbemServices,
+            String bsClassName,
+            int iFlags,
+            ISWbem objWbemNamedValueSet) throws AutomationException;
 
-   * @exception AutomationException If the remote server throws an exception.
-   */
-  public void remove  (
-              int iIndex,
-              int iFlags) throws AutomationException;
+    /**
+     * remove. Remove an item from this refresher
+     *
+     * @param     iIndex The iIndex (in)
+     * @param     iFlags The iFlags (in, optional, pass 0 if not required)
 
-  /**
-   * refresh. Refresh all items in this collection
-   *
-   * @param     iFlags The iFlags (in, optional, pass 0 if not required)
+     * @exception AutomationException If the remote server throws an exception.
+     */
+    public void remove(
+            int iIndex,
+            int iFlags) throws AutomationException;
 
-   * @exception AutomationException If the remote server throws an exception.
-   */
-  public void refresh  (
-              int iFlags) throws AutomationException;
+    /**
+     * refresh. Refresh all items in this collection
+     *
+     * @param     iFlags The iFlags (in, optional, pass 0 if not required)
 
-  /**
-   * isAutoReconnect. Whether to attempt auto-reconnection to a remote provider
-   *
-   * @return    The bCount
+     * @exception AutomationException If the remote server throws an exception.
+     */
+    public void refresh(
+            int iFlags) throws AutomationException;
 
-   * @exception AutomationException If the remote server throws an exception.
-   */
-  public boolean isAutoReconnect  () throws AutomationException;
+    /**
+     * isAutoReconnect. Whether to attempt auto-reconnection to a remote provider
+     *
+     * @return    The bCount
 
-  /**
-   * setAutoReconnect. Whether to attempt auto-reconnection to a remote provider
-   *
-   * @param     bCount The bCount (in)
+     * @exception AutomationException If the remote server throws an exception.
+     */
+    public boolean isAutoReconnect() throws AutomationException;
 
-   * @exception AutomationException If the remote server throws an exception.
-   */
-  public void setAutoReconnect  (
-              boolean bCount) throws AutomationException;
+    /**
+     * setAutoReconnect. Whether to attempt auto-reconnection to a remote provider
+     *
+     * @param     bCount The bCount (in)
 
-  /**
-   * deleteAll. Delete all items in this collection
-   *
+     * @exception AutomationException If the remote server throws an exception.
+     */
+    public void setAutoReconnect(
+            boolean bCount) throws AutomationException;
 
-   * @exception AutomationException If the remote server throws an exception.
-   */
-  public void deleteAll  () throws AutomationException;
+    /**
+     * deleteAll. Delete all items in this collection
+     *
 
-
+     * @exception AutomationException If the remote server throws an exception.
+     */
+    public void deleteAll() throws AutomationException;
 //  String IID = "14d8250e-d9c2-11d3-b38f-00105a1f473a";
 //  String DISPID__4_GET_NAME = "get_NewEnum";
 //  String DISPID_0_NAME = "item";

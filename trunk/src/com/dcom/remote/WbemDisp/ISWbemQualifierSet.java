@@ -20,7 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 import org.jinterop.dcom.impls.automation.IJIEnumVariant;
 
-public interface ISWbemQualifierSet extends ISWbem{
+public interface ISWbemQualifierSet extends ISWbem {
 
     /**
      * get_NewEnum.
@@ -80,8 +80,6 @@ public interface ISWbemQualifierSet extends ISWbem{
     public void remove(
             String strName,
             int iFlags) throws AutomationException;
-
-
 //    String IID = "9b16ed16-d3df-11d1-8b08-00600806d9b6";
 //    String DISPID__4_GET_NAME = "get_NewEnum";
 //    String DISPID_0_NAME = "item";

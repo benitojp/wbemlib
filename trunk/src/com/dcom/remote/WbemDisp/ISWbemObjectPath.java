@@ -20,6 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemObjectPath extends ISWbem {
+
     /**
      * getPath. The full path
      *
@@ -209,8 +210,6 @@ public interface ISWbemObjectPath extends ISWbem {
      */
     public void setAuthority(
             String strAuthority) throws AutomationException;
-
-
 //    String IID = "5791bc27-ce9c-11d1-97bf-0000f81e849c";
 //    String DISPID_0_GET_NAME = "getPath";
 //    String DISPID_0_PUT_NAME = "setPath";

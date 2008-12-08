@@ -17,7 +17,7 @@
  */
 package com.dcom.remote.wbemdisp;
 
-
 public interface WbemConnectOptionsEnum {
+
     static final int wbemConnectFlagUseMaxWait = 128;
 }

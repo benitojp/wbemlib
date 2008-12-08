@@ -20,7 +20,6 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
 import com.dcom.exception.DCOMException;
-import com.dcom.utils.Log;
 import org.jinterop.dcom.core.IJIComObject;
 
 public class SWbemMethod extends WbemDisp implements ISWbemMethod {
@@ -34,7 +33,7 @@ public class SWbemMethod extends WbemDisp implements ISWbemMethod {
         try {
             return (String) getResult(get("Name"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -44,7 +43,7 @@ public class SWbemMethod extends WbemDisp implements ISWbemMethod {
         try {
             return (String) getResult(get("Origin"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -54,7 +53,7 @@ public class SWbemMethod extends WbemDisp implements ISWbemMethod {
         try {
             return (new SWbemObject(getClientInfo(), (IJIComObject) getResult(get("InParameters"))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -64,7 +63,7 @@ public class SWbemMethod extends WbemDisp implements ISWbemMethod {
         try {
             return (new SWbemObject(getClientInfo(), (IJIComObject) getResult(get("OutParameters"))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -74,7 +73,7 @@ public class SWbemMethod extends WbemDisp implements ISWbemMethod {
         try {
             return (new SWbemQualifierSet(getClientInfo(), (IJIComObject) getResult(get("Qualifiers_"))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }

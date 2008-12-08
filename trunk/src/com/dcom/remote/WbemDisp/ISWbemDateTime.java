@@ -20,6 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemDateTime extends ISWbem {
+
     /**
      * getValue. The DMTF datetime
      *
@@ -367,8 +368,6 @@ public interface ISWbemDateTime extends ISWbem {
     public void setFileTime(
             String strFileTime,
             boolean bIsLocal) throws AutomationException;
-
-
 //    String IID = "5e97458a-cf77-11d3-b38f-00105a1f473a";
 //    String DISPID_0_GET_NAME = "getValue";
 //    String DISPID_0_PUT_NAME = "setValue";

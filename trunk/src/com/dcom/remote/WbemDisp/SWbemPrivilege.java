@@ -22,20 +22,19 @@ import org.jinterop.dcom.core.JIVariant;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.DCOMException;
 import com.dcom.exception.AutomationException;
-import com.dcom.utils.Log;
 
 public class SWbemPrivilege extends WbemDisp implements ISWbemPrivilege {
 
     public SWbemPrivilege(ClientInfo clientInfo, IJIComObject comObj) throws DCOMException {
         super(clientInfo, comObj, "26ee67bd-5804-11d2-8b4a-00600806d9b6");
     }
-    
+
     @Override
     public boolean isEnabled() throws AutomationException {
         try {
-            return (Boolean)getResult(get("IsEnabled"));
+            return (Boolean) getResult(get("IsEnabled"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -45,7 +44,7 @@ public class SWbemPrivilege extends WbemDisp implements ISWbemPrivilege {
         try {
             put("IsEnabled", new JIVariant(bIsEnabled));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -53,9 +52,9 @@ public class SWbemPrivilege extends WbemDisp implements ISWbemPrivilege {
     @Override
     public String getName() throws AutomationException {
         try {
-            return (String)getResult(get("Name"));
+            return (String) getResult(get("Name"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -63,9 +62,9 @@ public class SWbemPrivilege extends WbemDisp implements ISWbemPrivilege {
     @Override
     public String getDisplayName() throws AutomationException {
         try {
-            return (String)getResult(get("DisplayName"));
+            return (String) getResult(get("DisplayName"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -73,12 +72,10 @@ public class SWbemPrivilege extends WbemDisp implements ISWbemPrivilege {
     @Override
     public int getIdentifier() throws AutomationException {
         try {
-            return (Integer)getResult(get("Identifier"));
+            return (Integer) getResult(get("Identifier"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
-
-
 }

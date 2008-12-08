@@ -20,7 +20,6 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
 import com.dcom.exception.DCOMException;
-import com.dcom.utils.Log;
 import org.jinterop.dcom.core.IJIComObject;
 import org.jinterop.dcom.core.JIVariant;
 import org.jinterop.dcom.core.JIString;
@@ -45,7 +44,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return (new SWbemObjectPath(getClientInfo(), (IJIComObject) getResult(callMethod("Put_", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -62,7 +61,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             callMethod("PutAsync_", params);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -76,7 +75,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             callMethod("Delete_", params);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -93,7 +92,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             callMethod("DeleteAsync_", params);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -107,7 +106,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return (new SWbemObjectSet(getClientInfo(), (IJIComObject) getResult(callMethod("Instances_", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -124,7 +123,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             callMethod("InstancesAsync_", params);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -139,7 +138,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return (new SWbemObjectSet(getClientInfo(), (IJIComObject) getResult(callMethod("Subclasses_", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -156,7 +155,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             callMethod("SubclassesAsync_", params);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -190,7 +189,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return (new SWbemObjectSet(getClientInfo(), (IJIComObject) getResult(callMethod("AssociatorsOf", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -224,7 +223,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             callMethod("AssociatorsAsync_", params);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -244,7 +243,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return (new SWbemObjectSet(getClientInfo(), (IJIComObject) getResult(callMethod("References_", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -266,7 +265,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             callMethod("ReferencesAsync_", params);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -284,7 +283,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return (new SWbemObject(getClientInfo(), (IJIComObject) getResult(callMethod("ExecMethod_", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -304,7 +303,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             callMethod("ExecMethodAsync_", params);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -314,7 +313,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
         try {
             return (SWbemObject) getResult(callMethod("Clone_"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -325,7 +324,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             Object[] params = new Object[]{new Integer(iFlags)};
             return (String) getResult(callMethod("GetObjectText_", params));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -336,7 +335,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             Object[] params = new Object[]{new Integer(iFlags)};
             return (new SWbemObject(getClientInfo(), (IJIComObject) getResult(callMethod("SpawnDerivedClass_", params))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -347,7 +346,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             Object[] params = new Object[]{new Integer(iFlags)};
             return (new SWbemObject(getClientInfo(), (IJIComObject) getResult(callMethod("SpawnInstance_", params))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -363,7 +362,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return (Boolean) getResult(callMethod("CompareTo_", params));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -373,7 +372,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
         try {
             return (new SWbemQualifierSet(getClientInfo(), (IJIComObject) getResult(get("Qualifiers_"))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -384,7 +383,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return (new SWbemPropertySet(getClientInfo(), (IJIComObject) getResult(get("Properties_"))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -395,7 +394,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return (new SWbemMethodSet(getClientInfo(), (IJIComObject) getResult(get("Methods_"))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -407,7 +406,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return getResult(get("Derivation_"));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -417,7 +416,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
         try {
             return (new SWbemObjectPath(getClientInfo(), (IJIComObject) getResult(get("Path_"))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -428,7 +427,7 @@ public class SWbemObject extends WbemDisp implements ISWbemObject {
             return (new SWbemSecurity(getClientInfo(), (IJIComObject) getResult(get("Security_"))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }

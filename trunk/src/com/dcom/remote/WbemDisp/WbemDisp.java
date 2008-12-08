@@ -22,15 +22,13 @@ import com.dcom.client.ClientInfo;
 import com.dcom.exception.DCOMException;
 import org.jinterop.dcom.core.IJIComObject;
 
-
 public abstract class WbemDisp extends BaseObject {
-    
+
     public WbemDisp(ClientInfo clientInfo, String iid) throws DCOMException {
-        super (clientInfo, "WbemScripting.SWbemLocator", iid);
+        super(clientInfo, "WbemScripting.SWbemLocator", iid);
     }
 
     public WbemDisp(ClientInfo clientInfo, IJIComObject comObj, String iid) throws DCOMException {
-        super (clientInfo, "WbemScripting.SWbemLocator", comObj, iid);
-
+        super(clientInfo, "WbemScripting.SWbemLocator", comObj, iid);
     }
 }

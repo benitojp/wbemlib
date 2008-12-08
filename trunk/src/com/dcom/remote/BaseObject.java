@@ -69,7 +69,7 @@ public abstract class BaseObject extends ConnectionMgr {
             }
             return dispatch;
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
         }
     }
@@ -80,7 +80,7 @@ public abstract class BaseObject extends ConnectionMgr {
             JIVariant outVal[] = getDispatch().callMethodA(idOfName, params);
             return outVal;
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new DCOMException(e);
         }
     }
@@ -89,7 +89,7 @@ public abstract class BaseObject extends ConnectionMgr {
         try {
             return getDispatch().call(obj);
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new DCOMException(e);
         }
     }
@@ -100,7 +100,7 @@ public abstract class BaseObject extends ConnectionMgr {
             JIVariant outVal = getDispatch().callMethodA(idOfName);
             return outVal;
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new DCOMException(e);
         }
     }
@@ -134,7 +134,7 @@ public abstract class BaseObject extends ConnectionMgr {
                 o = outVal[0].getObjectAsInt();
             }
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new DCOMException(e);
         }
         return o;
@@ -169,7 +169,7 @@ public abstract class BaseObject extends ConnectionMgr {
                 o = outVal.getObjectAsInt();
             }
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new DCOMException(e);
         }
         return o;
@@ -186,10 +186,10 @@ public abstract class BaseObject extends ConnectionMgr {
         try {
             return getDispatch().get(s);
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
         }
     }
@@ -205,10 +205,10 @@ public abstract class BaseObject extends ConnectionMgr {
         try {
             getDispatch().put(k, s);
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+            
             throw new AutomationException(e);
         }
     }
