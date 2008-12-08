@@ -25,13 +25,12 @@ import org.jinterop.dcom.common.JIException;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.DCOMException;
 import com.dcom.exception.AutomationException;
-import com.dcom.utils.Log;
 
 public class SWbemPropertySet extends WbemDisp implements ISWbemPropertySet {
 
     public SWbemPropertySet(ClientInfo clientInfo, IJIComObject comObj) throws DCOMException {
         super(clientInfo, comObj, "dea0a7b2-d4ba-11d1-8b09-00600806d9b6");
-    }   
+    }
 
     @Override
     public IJIEnumVariant get_NewEnum() throws AutomationException {
@@ -40,11 +39,11 @@ public class SWbemPropertySet extends WbemDisp implements ISWbemPropertySet {
             IJIEnumVariant enumVARIANT = (IJIEnumVariant) JIObjectFactory.narrowObject(objCom.queryInterface(IJIEnumVariant.IID));
             return enumVARIANT;
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -53,13 +52,12 @@ public class SWbemPropertySet extends WbemDisp implements ISWbemPropertySet {
     public ISWbemProperty item(String strName, int iFlags) throws AutomationException {
         try {
             Object[] params = new Object[]{
-                    new JIString(strName),
-                    new Integer(iFlags),
-            };
+                new JIString(strName),
+                new Integer(iFlags),};
             return (new SWbemProperty(getClientInfo(), (IJIComObject) getResult(callMethod("Item", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -69,7 +67,7 @@ public class SWbemPropertySet extends WbemDisp implements ISWbemPropertySet {
         try {
             return (Integer) getResult(get("Count"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -78,15 +76,14 @@ public class SWbemPropertySet extends WbemDisp implements ISWbemPropertySet {
     public ISWbemProperty add(String strName, int iCimType, boolean bIsArray, int iFlags) throws AutomationException {
         try {
             Object[] params = new Object[]{
-                    new JIString(strName),
-                    new Integer(iCimType),
-                    new Boolean(bIsArray),
-                    new Integer(iFlags),                    
-            };
+                new JIString(strName),
+                new Integer(iCimType),
+                new Boolean(bIsArray),
+                new Integer(iFlags),};
             return (new SWbemProperty(getClientInfo(), (IJIComObject) getResult(callMethod("Add", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -95,13 +92,13 @@ public class SWbemPropertySet extends WbemDisp implements ISWbemPropertySet {
     public void remove(String strName, int iFlags) throws AutomationException {
         try {
             Object[] params = new Object[]{
-                   new JIString(strName),
-                    new Integer(iFlags)
+                new JIString(strName),
+                new Integer(iFlags)
             };
             getResult(callMethod("Remove", params));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }

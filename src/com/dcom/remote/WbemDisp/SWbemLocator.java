@@ -20,7 +20,6 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
 import com.dcom.exception.DCOMException;
-import com.dcom.utils.Log;
 import org.jinterop.dcom.core.IJIComObject;
 import org.jinterop.dcom.core.JIString;
 import org.jinterop.dcom.core.JIVariant;
@@ -48,13 +47,13 @@ public class SWbemLocator extends WbemDisp implements ISWbemLocator {
                 ((strPassword == null)) ? JIVariant.OPTIONAL_PARAM() : new JIString(strPassword),
                 ((strLocale == null)) ? JIVariant.OPTIONAL_PARAM() : new JIString(strLocale),
                 ((strAuthority == null)) ? JIVariant.OPTIONAL_PARAM() : new JIString(strAuthority),
-                new Integer(0), 
+                new Integer(0),
                 putOptionalISWbem(objWbemNamedValueSet)
             };
             return (new SWbemServices(getClientInfo(), (IJIComObject) getResult(callMethod("ConnectServer", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -64,7 +63,7 @@ public class SWbemLocator extends WbemDisp implements ISWbemLocator {
         try {
             return (new SWbemSecurity(getClientInfo(), (IJIComObject) getResult(get("Security_"))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }

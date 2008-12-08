@@ -20,6 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemQualifier extends ISWbem {
+
     /**
      * getValue. The value of this Qualifier
      *
@@ -111,8 +112,6 @@ public interface ISWbemQualifier extends ISWbem {
      * @throws AutomationException If the remote server throws an exception.
      */
     public boolean isAmended() throws AutomationException;
-
-
 //    String IID = "79b05932-d3b7-11d1-8b06-00600806d9b6";
 //    String DISPID_0_GET_NAME = "getValue";
 //    String DISPID_0_PUT_NAME = "setValue";

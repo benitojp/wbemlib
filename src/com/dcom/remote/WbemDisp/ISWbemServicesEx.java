@@ -20,6 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemServicesEx extends ISWbemServices, ISWbem {
+
     /**
      * put. Save the Object to this Namespace
      *

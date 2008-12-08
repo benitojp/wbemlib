@@ -18,6 +18,7 @@
 package com.dcom.remote.wbemdisp;
 
 public interface WbemCimtypeEnum {
+
     static final int wbemCimtypeSint8 = 16;
     static final int wbemCimtypeUint8 = 17;
     static final int wbemCimtypeSint16 = 2;

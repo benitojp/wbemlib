@@ -20,7 +20,6 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
 import com.dcom.exception.DCOMException;
-import com.dcom.utils.Log;
 import org.jinterop.dcom.common.JIException;
 import org.jinterop.dcom.core.IJIComObject;
 import org.jinterop.dcom.core.JIString;
@@ -41,11 +40,11 @@ public class SWbemObjectSet extends WbemDisp implements ISWbemObjectSet {
             IJIEnumVariant enumVARIANT = (IJIEnumVariant) JIObjectFactory.narrowObject(objCom.queryInterface(IJIEnumVariant.IID));
             return enumVARIANT;
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -54,13 +53,12 @@ public class SWbemObjectSet extends WbemDisp implements ISWbemObjectSet {
     public ISWbemObject item(String strObjectPath, int iFlags) throws AutomationException {
         try {
             Object[] params = new Object[]{
-                    ((strObjectPath == null)) ? JIVariant.OPTIONAL_PARAM() : new JIString(strObjectPath),
-                    new Integer(iFlags),
-            };
+                ((strObjectPath == null)) ? JIVariant.OPTIONAL_PARAM() : new JIString(strObjectPath),
+                new Integer(iFlags),};
             return (new SWbemObject(getClientInfo(), (IJIComObject) getResult(callMethod("Item", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -70,7 +68,7 @@ public class SWbemObjectSet extends WbemDisp implements ISWbemObjectSet {
         try {
             return (Integer) getResult(get("Count"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -80,9 +78,8 @@ public class SWbemObjectSet extends WbemDisp implements ISWbemObjectSet {
         try {
             return (new SWbemSecurity(getClientInfo(), (IJIComObject) getResult(get("Security_"))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
-
 }

@@ -20,7 +20,6 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 import org.jinterop.dcom.impls.automation.IJIDispatch;
 
-
 public interface ISWbem {
 
     /**
@@ -29,5 +28,5 @@ public interface ISWbem {
      * @return IJIDispatch
      * @throws DCOMException
      */
-    public IJIDispatch getDispatch() throws AutomationException ;
+    public IJIDispatch getDispatch() throws AutomationException;
 }

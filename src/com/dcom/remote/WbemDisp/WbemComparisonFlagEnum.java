@@ -17,8 +17,8 @@
  */
 package com.dcom.remote.wbemdisp;
 
-
 public interface WbemComparisonFlagEnum {
+
     static final int wbemComparisonFlagIncludeAll = 0;
     static final int wbemComparisonFlagIgnoreQualifiers = 1;
     static final int wbemComparisonFlagIgnoreObjectSource = 2;

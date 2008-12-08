@@ -21,6 +21,7 @@ import com.dcom.exception.AutomationException;
 import org.jinterop.dcom.impls.automation.IJIEnumVariant;
 
 public interface ISWbemMethodSet extends ISWbem {
+
     /**
      * get_NewEnum.
      *

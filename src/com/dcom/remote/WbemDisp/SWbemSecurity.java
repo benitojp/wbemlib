@@ -20,10 +20,8 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
 import com.dcom.exception.DCOMException;
-import com.dcom.utils.Log;
 import org.jinterop.dcom.core.IJIComObject;
 import org.jinterop.dcom.core.JIVariant;
-
 
 public class SWbemSecurity extends WbemDisp implements ISWbemSecurity {
 
@@ -36,7 +34,7 @@ public class SWbemSecurity extends WbemDisp implements ISWbemSecurity {
         try {
             return (Integer) getResult(get("ImpersonationLevel"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -46,7 +44,7 @@ public class SWbemSecurity extends WbemDisp implements ISWbemSecurity {
         try {
             put("ImpersonationLevel", new JIVariant(iImpersonationLevel));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -56,7 +54,7 @@ public class SWbemSecurity extends WbemDisp implements ISWbemSecurity {
         try {
             return (Integer) getResult(get("AuthenticationLevel"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -66,7 +64,7 @@ public class SWbemSecurity extends WbemDisp implements ISWbemSecurity {
         try {
             put("AuthenticationLevel", new JIVariant(iAuthenticationLevel));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -76,7 +74,7 @@ public class SWbemSecurity extends WbemDisp implements ISWbemSecurity {
         try {
             return (new SWbemPrivilegeSet(getClientInfo(), (IJIComObject) getResult(get("Privileges"))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }

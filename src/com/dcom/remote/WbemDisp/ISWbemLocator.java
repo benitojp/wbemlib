@@ -20,6 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemLocator extends ISWbem {
+
     /**
      * connectServer. Connect to a Namespace
      *

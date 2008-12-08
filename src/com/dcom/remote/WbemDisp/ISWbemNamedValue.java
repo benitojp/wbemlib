@@ -20,6 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemNamedValue extends ISWbem {
+
     /**
      * getValue. The Value of this Named element
      *

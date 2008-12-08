@@ -395,5 +395,4 @@ public interface ISWbemServices extends ISWbem {
 //    String DISPID_17_NAME = "execMethod";
 //    String DISPID_18_NAME = "execMethodAsync";
 //    String DISPID_19_GET_NAME = "getSecurity_";
-
 }

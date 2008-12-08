@@ -20,22 +20,21 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.DCOMException;
 import com.dcom.exception.AutomationException;
-import com.dcom.utils.Log;
 import org.jinterop.dcom.core.IJIComObject;
 
-public class SWbemEventSource  extends WbemDisp implements ISWbemEventSource {
+public class SWbemEventSource extends WbemDisp implements ISWbemEventSource {
 
     public SWbemEventSource(ClientInfo clientInfo, IJIComObject comObj) throws DCOMException {
         super(clientInfo, comObj, "27d54d92-0ebe-11d2-8b22-00600806d9b6");
     }
-    
+
     @Override
     public ISWbemObject nextEvent(int iTimeoutMs) throws AutomationException {
         try {
             Object[] params = new Object[]{new Integer(iTimeoutMs)};
             return (new SWbemObject(getClientInfo(), (IJIComObject) getResult(callMethod("NextEvent", params))));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -46,9 +45,8 @@ public class SWbemEventSource  extends WbemDisp implements ISWbemEventSource {
             return (new SWbemSecurity(getClientInfo(), (IJIComObject) getResult(get("Security_"))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
-
 }

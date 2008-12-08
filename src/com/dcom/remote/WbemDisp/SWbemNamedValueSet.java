@@ -26,15 +26,13 @@ import org.jinterop.dcom.common.JIException;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.DCOMException;
 import com.dcom.exception.AutomationException;
-import com.dcom.utils.Log;
-
 
 public class SWbemNamedValueSet extends WbemDisp implements ISWbemNamedValueSet {
 
     public SWbemNamedValueSet(ClientInfo clientInfo, IJIComObject comObj) throws DCOMException {
         super(clientInfo, comObj, "cf2376ea-ce8c-11d1-8b05-00600806d9b6");
     }
-    
+
     @Override
     public IJIEnumVariant get_NewEnum() throws AutomationException {
         try {
@@ -42,11 +40,11 @@ public class SWbemNamedValueSet extends WbemDisp implements ISWbemNamedValueSet 
             IJIEnumVariant enumVARIANT = (IJIEnumVariant) JIObjectFactory.narrowObject(objCom.queryInterface(IJIEnumVariant.IID));
             return enumVARIANT;
         } catch (JIException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -55,13 +53,12 @@ public class SWbemNamedValueSet extends WbemDisp implements ISWbemNamedValueSet 
     public ISWbemNamedValue item(String strName, int iFlags) throws AutomationException {
         try {
             Object[] params = new Object[]{
-                    new JIString(strName),
-                    new Integer(iFlags),
-            };
+                new JIString(strName),
+                new Integer(iFlags),};
             return (new SWbemNamedValue(getClientInfo(), (IJIComObject) getResult(callMethod("Item", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -71,7 +68,7 @@ public class SWbemNamedValueSet extends WbemDisp implements ISWbemNamedValueSet 
         try {
             return (Integer) getResult(get("Count"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -80,14 +77,13 @@ public class SWbemNamedValueSet extends WbemDisp implements ISWbemNamedValueSet 
     public ISWbemNamedValue add(String strName, Object varValue, int iFlags) throws AutomationException {
         try {
             Object[] params = new Object[]{
-                    new JIString(strName),
-                    new JIVariant(varValue),
-                    new Integer(iFlags),
-            };
+                new JIString(strName),
+                new JIVariant(varValue),
+                new Integer(iFlags),};
             return (new SWbemNamedValue(getClientInfo(), (IJIComObject) getResult(callMethod("Add", params))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -96,13 +92,12 @@ public class SWbemNamedValueSet extends WbemDisp implements ISWbemNamedValueSet 
     public void remove(String strName, int iFlags) throws AutomationException {
         try {
             Object[] params = new Object[]{
-                    new JIString(strName),
-                    new Integer(iFlags),
-            };
+                new JIString(strName),
+                new Integer(iFlags),};
             callMethod("Remove", params);
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -113,7 +108,7 @@ public class SWbemNamedValueSet extends WbemDisp implements ISWbemNamedValueSet 
             return (new SWbemNamedValueSet(getClientInfo(), (IJIComObject) getResult(callMethod("Clone"))));
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -123,11 +118,8 @@ public class SWbemNamedValueSet extends WbemDisp implements ISWbemNamedValueSet 
         try {
             callMethod("deleteAll");
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
-
-
-
 }

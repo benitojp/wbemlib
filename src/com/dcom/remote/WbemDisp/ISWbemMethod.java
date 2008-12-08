@@ -20,6 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.exception.AutomationException;
 
 public interface ISWbemMethod extends ISWbem {
+
     /**
      * getName. The name of this Method
      *

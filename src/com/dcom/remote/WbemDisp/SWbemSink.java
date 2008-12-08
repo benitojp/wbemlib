@@ -20,9 +20,7 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
 import com.dcom.exception.DCOMException;
-import com.dcom.utils.Log;
 import org.jinterop.dcom.core.IJIComObject;
-
 
 public class SWbemSink extends WbemDisp implements ISWbemSink {
 
@@ -36,7 +34,7 @@ public class SWbemSink extends WbemDisp implements ISWbemSink {
             callMethod("Cancel");
 
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }

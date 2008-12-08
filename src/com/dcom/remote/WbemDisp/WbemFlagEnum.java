@@ -18,6 +18,7 @@
 package com.dcom.remote.wbemdisp;
 
 public interface WbemFlagEnum {
+
     static final int wbemFlagReturnImmediately = 16;
     static final int wbemFlagReturnWhenComplete = 0;
     static final int wbemFlagBidirectional = 0;

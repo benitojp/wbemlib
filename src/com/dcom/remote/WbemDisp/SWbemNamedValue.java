@@ -20,7 +20,6 @@ package com.dcom.remote.wbemdisp;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
 import com.dcom.exception.DCOMException;
-import com.dcom.utils.Log;
 import org.jinterop.dcom.core.IJIComObject;
 import org.jinterop.dcom.core.JIVariant;
 
@@ -28,14 +27,14 @@ public class SWbemNamedValue extends WbemDisp implements ISWbemNamedValue {
 
     public SWbemNamedValue(ClientInfo clientInfo, IJIComObject comObj) throws DCOMException {
         super(clientInfo, comObj, "76a64164-cb41-11d1-8b02-00600806d9b6");
-    }   
+    }
 
     @Override
     public Object getValue() throws AutomationException {
         try {
             return getResult(get("Value"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -45,7 +44,7 @@ public class SWbemNamedValue extends WbemDisp implements ISWbemNamedValue {
         try {
             put("Value", new JIVariant(varValue));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
@@ -55,10 +54,8 @@ public class SWbemNamedValue extends WbemDisp implements ISWbemNamedValue {
         try {
             return (String) getResult(get("Name"));
         } catch (DCOMException e) {
-            Log.getInstance().getLogger().throwing(Log.getClassName(), Log.getMethodName(), e);
+
             throw new AutomationException(e);
         }
     }
-
-
 }
