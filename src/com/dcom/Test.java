@@ -19,9 +19,9 @@ package com.dcom;
 
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
-import com.dcom.remote.wbemdisp.*;
+import com.dcom.remote.wbem.*;
 
-import com.dcom.remote.wbemdisp.util.Utility;
+import com.dcom.remote.wbem.util.Utility;
 import java.util.Collection;
 
 

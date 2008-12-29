@@ -21,7 +21,7 @@ import com.dcom.client.ClientInfo;
 import com.dcom.client.ConnectionMgr;
 import com.dcom.exception.AutomationException;
 import com.dcom.exception.DCOMException;
-import com.dcom.remote.wbemdisp.ISWbem;
+import com.dcom.remote.wbem.ISWbem;
 import com.dcom.utils.Log;
 import org.jinterop.dcom.common.JIException;
 import org.jinterop.dcom.core.IJIComObject;
