@@ -20,13 +20,10 @@ package com.dcom;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.AutomationException;
 import com.dcom.remote.wbemdisp.*;
-import com.dcom.remote.wbemdisp.util.Utility;
 
-import com.dcom.utils.Log;
+import com.dcom.remote.wbemdisp.util.Utility;
 import java.util.Collection;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import org.jinterop.dcom.common.JISystem;
+
 
 public class Test {
 
