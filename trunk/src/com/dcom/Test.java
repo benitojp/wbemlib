@@ -29,8 +29,8 @@ public class Test {
 
     String domain = "TWOSHEA";
     String userName = "root";
-    String password = "root2008";
-    String server = "172.16.210.70";
+    String password = "password";
+    String server = "8.8.8.8";
 
     public static ISWbemObject getTargetComputer(ClientInfo clientInfo, ISWbemServices iSWbemServices, String vmElementName) throws AutomationException, AutomationException {
         ISWbemObject iSWbemObject = null;
