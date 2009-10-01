@@ -18,7 +18,6 @@
 package com.dcom.client;
 
 import com.dcom.exception.DCOMException;
-import com.dcom.utils.Log;
 import org.jinterop.dcom.core.IJIComObject;
 
 public class ConnectionMgr {
@@ -30,11 +29,8 @@ public class ConnectionMgr {
     public ConnectionMgr(ClientInfo clientInfo, String progId) {
 
         // mio NOTE : force to set encoding
-        //System.setProperty("jcifs.encoding", "Cp1252");
-        //System.setProperty("file.encoding", "Cp1252");
-
-        // mio NOTE : set off by default
-        Log.setJInteropOff();
+        System.setProperty("jcifs.encoding", "Cp1252");
+        System.setProperty("file.encoding", "Cp1252");
         
         _clientInfo = clientInfo;
         _progId = progId;
@@ -45,10 +41,7 @@ public class ConnectionMgr {
 
         // mio NOTE : force to set encoding
         //System.setProperty("jcifs.encoding", "Cp1252");
-        //System.setProperty("file.encoding", "Cp1252");
-
-        // mio NOTE : set off by default
-        Log.setJInteropOff();
+        //System.setProperty("file.encoding", "Cp1252");       
 
         _clientInfo = clientInfo;
         _progId = progId;

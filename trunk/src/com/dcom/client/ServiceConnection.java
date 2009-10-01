@@ -73,7 +73,7 @@ public class ServiceConnection {
      * @param progId
      * @throws DCOMException
      */
-    public void connect(String domain, String username, String password, String server, String progId) throws DCOMException {
+    public void connect(final String domain, final String username, final String password, final String server, final String progIdStr) throws DCOMException {
         if (_session != null) {
             disconnect();
         }
@@ -81,7 +81,9 @@ public class ServiceConnection {
 
             _session = JISession.createSession(domain, username, password);
 
-            JIProgId proId = JIProgId.valueOf(progId);
+            // WScript.Shell
+            
+            JIProgId proId = JIProgId.valueOf(progIdStr);
             proId.setAutoRegistration(true);
             _comServer = new JIComServer(proId, server, _session);
 
