@@ -27,10 +27,10 @@ import java.util.Collection;
 
 public class Test {
 
-    String domain = "TWOSHEA";
-    String userName = "root";
-    String password = "password";
-    String server = "8.8.8.8";
+    String domain = "";
+    String userName = "Administrator";
+    String password = "xxxxxxxxxx";
+    String server = "172.16.40.187";
 
     public static ISWbemObject getTargetComputer(ClientInfo clientInfo, ISWbemServices iSWbemServices, String vmElementName) throws AutomationException, AutomationException {
         ISWbemObject iSWbemObject = null;
@@ -52,7 +52,8 @@ public class Test {
         ClientInfo clientInfo = new ClientInfo(domain, userName, password, server);
         try {
 
-            //Log.setJInteropOff();
+            // mio NOTE : set off by default
+            com.dcom.utils.Log.setJInteropOff();
             //Log.setJInteropOn(Level.ALL);
             
             sWbemLocator = new SWbemLocator(clientInfo);

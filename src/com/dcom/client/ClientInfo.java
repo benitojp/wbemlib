@@ -40,7 +40,7 @@ public class ClientInfo implements IJIAuthInfo {
         this.domain = domain;
         this.userName = userName;
         this.password = password;
-        this.server = server;
+        this.server = server;        
     }
 
     /**
