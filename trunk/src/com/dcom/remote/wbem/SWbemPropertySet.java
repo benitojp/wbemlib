@@ -25,6 +25,10 @@ import org.jinterop.dcom.common.JIException;
 import com.dcom.client.ClientInfo;
 import com.dcom.exception.DCOMException;
 import com.dcom.exception.AutomationException;
+import java.util.ArrayList;
+import java.util.List;
+import org.jinterop.dcom.core.JIArray;
+import org.jinterop.dcom.core.JIVariant;
 
 public class SWbemPropertySet extends WbemDisp implements ISWbemPropertySet {
 
@@ -44,6 +48,28 @@ public class SWbemPropertySet extends WbemDisp implements ISWbemPropertySet {
 
         } catch (DCOMException e) {
 
+            throw new AutomationException(e);
+        }
+    }
+
+    @Override
+    public Object[] getPropertySet_() throws AutomationException {
+        try {
+            List<ISWbemProperty> propList = new ArrayList<ISWbemProperty>();
+            int count = getCount();
+            if(count > 0) {
+                IJIEnumVariant enumVARIANT = get_NewEnum();
+                JIArray aJIArray = (JIArray) enumVARIANT.next(count)[0];
+                JIVariant[] array = (JIVariant[]) aJIArray.getArrayInstance();
+                for (JIVariant variant : array) {
+                    ISWbemProperty iSWbemProperty = (new SWbemProperty(getClientInfo(), (IJIComObject) variant.getObjectAsComObject()));
+                    propList.add(iSWbemProperty);
+                }
+            }
+            return propList.toArray();
+        } catch (JIException e) {
+            throw new AutomationException(e);
+        } catch (DCOMException e) {
             throw new AutomationException(e);
         }
     }
