@@ -23,13 +23,16 @@ import com.dcom.remote.wbem.*;
 
 import com.dcom.remote.wbem.util.Utility;
 import java.util.Collection;
+import org.jinterop.dcom.core.JIArray;
+import org.jinterop.dcom.core.JIVariant;
+import org.jinterop.dcom.impls.automation.IJIEnumVariant;
 
 
 public class Test {
 
     String domain = "";
     String userName = "Administrator";
-    String password = "xxxxxxxxxx";
+    String password = "Admin2009!";
     String server = "172.16.40.187";
 
     public static ISWbemObject getTargetComputer(ClientInfo clientInfo, ISWbemServices iSWbemServices, String vmElementName) throws AutomationException, AutomationException {
@@ -60,22 +63,67 @@ public class Test {
             sWbemLocator.clientConnect();
             //root\\virtualization
             ISWbemServices iSWbemServices = sWbemLocator.connectServer(null, "\\root\\cimv2", null, null, null, null, 0, null);
-            ISWbemObjectSet iSWbemObjectSet = iSWbemServices.execQuery("select * from win32_process", null, 0, null);
+            {                
+                ISWbemObjectSet iSWbemObjectSet = iSWbemServices.execQuery("select * from win32_process", null, 0, null);
+                Collection<ISWbemObject> ISWbemObjectList = Utility.getSWbemObjects(clientInfo, iSWbemObjectSet);
+                for (ISWbemObject iSWbemObject : ISWbemObjectList) {
 
-            Collection<ISWbemObject> ISWbemObjectList = Utility.getSWbemObjects(clientInfo, iSWbemObjectSet);
-            for (ISWbemObject iSWbemObject : ISWbemObjectList) {
-
-                ISWbemPropertySet iSWbemPropertySet = iSWbemObject.getProperties_();
-                ISWbemProperty iSWbemProperty = iSWbemPropertySet.item("CommandLine", 0);
+                    ISWbemPropertySet iSWbemPropertySet = iSWbemObject.getProperties_();
+                    ISWbemProperty iSWbemProperty = iSWbemPropertySet.item("CommandLine", 0);
 //                Collection<ISWbemProperty> ISWbemPropertyList = Utility.getSWbemProperties(clientInfo, iSWbemPropertySet);
 //                for (ISWbemProperty iSWbemProperty : ISWbemPropertyList) {
-                String name = iSWbemProperty.getName();
-                Object value = iSWbemProperty.getValue();
-                System.out.println(name + " : " + value);
+                    String name = iSWbemProperty.getName();
+                    Object value = iSWbemProperty.getValue();
+                    System.out.println(name + " : " + value);
 //                    //System.out.println();
 //
 //                }
-                System.out.println();
+                    System.out.println();
+                }
+            }
+            {
+                ISWbemObjectSet iSWbemObjectSet = iSWbemServices.execQuery("select * from Win32_OperatingSystem", null, 0, null);
+                Collection<ISWbemObject> ISWbemObjectList = Utility.getSWbemObjects(clientInfo, iSWbemObjectSet);
+                for (ISWbemObject iSWbemObject : ISWbemObjectList) {
+
+                    ISWbemPropertySet iSWbemPropertySet = iSWbemObject.getProperties_();
+
+                    int ll = iSWbemPropertySet.getCount();
+                    IJIEnumVariant newVar = iSWbemPropertySet.get_NewEnum();
+                    for (int i = 0; i < ll; i++) {
+                        
+                        Object oo[] = newVar.next(i);
+                        System.out.println(oo);
+                        JIArray arr = (JIArray) oo[0];
+                        Object[] arrayOfBytes = (Object[]) arr.getArrayInstance();
+                        System.out.println("sss");
+                        
+                        //System.out.println(var.toString());
+
+                    }
+
+                    ISWbemProperty iSWbemPropertyName = iSWbemPropertySet.item("OSArchitecture", 0);
+                    String name = iSWbemPropertyName.getName();
+                    Object value = iSWbemPropertyName.getValue();
+                    System.out.println(name + " : " + value);                                       
+
+                    ISWbemProperty verProp = iSWbemPropertySet.item("Caption", 0);
+                    name = verProp.getName(); value = verProp.getValue();
+                    System.out.println(name + " : " + value);
+
+                    ISWbemProperty spProp = iSWbemPropertySet.item("ServicePackMajorVersion", 0);
+                    name = spProp.getName(); value = spProp.getValue();
+                    System.out.println(name + " : " + value);
+
+                    ISWbemProperty winDirProp = iSWbemPropertySet.item("WindowsDirectory", 0);
+                    name = winDirProp.getName(); value = winDirProp.getValue();
+                    System.out.println(name + " : " + value);
+
+                    ISWbemProperty manProp = iSWbemPropertySet.item("Manufacturer", 0);
+                    name = manProp.getName();value = manProp.getValue();
+                    System.out.println(name + " : " + value);
+                }
+                
             }
 
 //            IJIEnumVariant enumVARIANT = iSWbemObjectSet.get_NewEnum();

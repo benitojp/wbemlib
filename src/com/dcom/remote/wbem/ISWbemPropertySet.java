@@ -77,6 +77,13 @@ public interface ISWbemPropertySet extends ISWbem {
             String strName,
             int iFlags) throws AutomationException;
 
+    /**
+     * getPropertySet_()
+     * @return ISWbemProperty array
+     * @throws AutomationException
+     */
+    public Object[] getPropertySet_() throws AutomationException;
+
 //    String IID = "dea0a7b2-d4ba-11d1-8b09-00600806d9b6";
 //    String DISPID__4_GET_NAME = "get_NewEnum";
 //    String DISPID_0_NAME = "item";
