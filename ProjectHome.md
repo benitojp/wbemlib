@@ -1,0 +1,1 @@
+WMI is the Microsoft implementation of Web-Based Enterprise Management (WBEM), an industry initiative to develop a standard technology for accessing management information in an enterprise environment. This initiative helps companies lower their total cost of ownership by enabling powerful management of systems, applications and devices.
